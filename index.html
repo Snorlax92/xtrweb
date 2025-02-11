@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XTR - XRPL Crypto</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+    /* Navigation bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 10px 20px;
+    }
+    .navbar .left {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .navbar .token-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .navbar .links a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .navbar .links a:hover {
+      color: #3498db;
+    }
+    /* Main Section */
+    .main-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .main-section h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .main-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    /* Narrative Section (image on LEFT, text on RIGHT) */
+    .narrative-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .narrative-section .image {
+      flex: 0 0 auto;
+    }
+    .narrative-section .image img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .narrative-section .text {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+    .narrative-section .text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .narrative-section .text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* About Section */
+    .about-section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+    .about-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* Social Section */
+    .social-section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #f0f2f5;
+    }
+    .social-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .social-section .social-buttons a {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .social-section .social-buttons a:hover {
+      background-color: #3498db;
+    }
+    .social-section .social-buttons img {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      font-size: 14px;
+    }
+    /* Floating Contract Window */
+    .floating-contract {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #34495e;
+      color: #ecf0f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .floating-contract button {
+      background-color: #3498db;
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 14px;
+    }
+    .floating-contract button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="left">
+      <img src="https://raw.githubusercontent.com/Snorlax92/xtrweb/main/src/logo.jpg" alt="Token Logo" class="logo">
+      <div class="token-name">XTR</div>
+    </div>
+    <nav class="links">
+      <a href="https://x.com/XRPTRENDING/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/300px-X_logo_2023.svg.png" alt="Twitter Logo">
+        Twitter
+      </a>
+      <a href="https://t.me/TRENDINGRIPPLE" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Logo">
+        Telegram
+      </a>
+      <a href="https://dexscreener.com/xrpl/xtr.rafe4x2ftrgfxauqefmyjhdmhfgqb1yygv_xrp" target="_blank">
+        <img src="https://cdn.prod.website-files.com/6421d264d066fd2b24b91b20/661375b92a7e161501f4b5e5_dexscreener.322a5a2d.png" alt="Dexscreener Logo">
+        Chart
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <section class="main-section">
+    <h1>Main Description</h1>
+    <p>The #1 XRP Trending</p>
+  </section>
+
+  <!-- Narrative Section (Image on LEFT, Text on RIGHT) -->
+  <section class="narrative-section">
+    <div class="image">
+      <img src="https://raw.githubusercontent.com/Snorlax92/xtrweb/main/src/narrative.jpg" alt="Narrative Image">
+    </div>
+    <div class="text">
+      <h2>Narrative</h2>
+      <p>XTrend is the ultimate trending platform for XRPL tokens. Our cutting-edge Telegram Bot ranks tokens by trading volume in real-time, showcasing the hottest projects and delivering unparalleled visibility for up-and-coming tokens. With XTrend, investors can identify high-volume projects early, and token developers can secure a spot in the spotlight through organic performance or premium features.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About</h2>
+    <p>XRP Core Team:
+
+Bullishman
+Snorlax
+Mari
+PapaMasterr
+James
+Defi_naut
+DK</p>
+  </section>
+
+  <!-- Social Section -->
+  <section class="social-section">
+    <h2>Social</h2>
+    <div class="social-buttons">
+      <a href="https://x.com/XRPTRENDING/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/300px-X_logo_2023.svg.png" alt="Twitter Logo">
+        Twitter
+      </a>
+      <a href="https://t.me/TRENDINGRIPPLE" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Logo">
+        Telegram
+      </a>
+      <a href="https://dexscreener.com/xrpl/xtr.rafe4x2ftrgfxauqefmyjhdmhfgqb1yygv_xrp" target="_blank">
+        <img src="https://cdn.prod.website-files.com/6421d264d066fd2b24b91b20/661375b92a7e161501f4b5e5_dexscreener.322a5a2d.png" alt="Dexscreener Logo">
+        Chart
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© XTR 2025 All rights reserved</p>
+  </footer>
+
+  <!-- Floating Contract Window -->
+  <div class="floating-contract">
+    <div id="contractAddress">rafe4x2fTrgFXauqEfmyjHDmhFgqB1YYGv</div>
+    <button onclick="copyContract()">Copy</button>
+  </div>
+
+  <!-- Script to copy the contract without dialog -->
+  <script>
+    function copyContract() {
+      const contractText = document.getElementById('contractAddress').innerText;
+      navigator.clipboard.writeText(contractText);
+    }
+  </script>
+</body>
+</html>
